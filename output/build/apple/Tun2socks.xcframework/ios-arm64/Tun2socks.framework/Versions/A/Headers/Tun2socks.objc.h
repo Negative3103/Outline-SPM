@@ -12,19 +12,10 @@
 
 #include "Shadowsocks.objc.h"
 
-@protocol Tun2socksOutlineTunnel;
-@class Tun2socksOutlineTunnel;
 @protocol Tun2socksTunWriter;
 @class Tun2socksTunWriter;
 @protocol Tun2socksTunnel;
 @class Tun2socksTunnel;
-
-@protocol Tun2socksOutlineTunnel <NSObject>
-- (void)disconnect;
-- (BOOL)isConnected;
-- (BOOL)updateUDPSupport;
-- (BOOL)write:(NSData* _Nullable)data ret0_:(long* _Nullable)ret0_ error:(NSError* _Nullable* _Nullable)error;
-@end
 
 @protocol Tun2socksTunWriter <NSObject>
 - (BOOL)close:(NSError* _Nullable* _Nullable)error;
@@ -61,25 +52,9 @@ FOUNDATION_EXPORT id<Tun2socksTunnel> _Nullable Tun2socksConnectShadowsocksTunne
 // skipped function NewUDPHandler with unsupported parameter or return types
 
 
-@class Tun2socksOutlineTunnel;
-
 @class Tun2socksTunWriter;
 
 @class Tun2socksTunnel;
-
-/**
- * Deprecated: use Tunnel directly.
- */
-@interface Tun2socksOutlineTunnel : NSObject <goSeqRefInterface, Tun2socksOutlineTunnel> {
-}
-@property(strong, readonly) _Nonnull id _ref;
-
-- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
-- (void)disconnect;
-- (BOOL)isConnected;
-- (BOOL)updateUDPSupport;
-- (BOOL)write:(NSData* _Nullable)data ret0_:(long* _Nullable)ret0_ error:(NSError* _Nullable* _Nullable)error;
-@end
 
 /**
  * TunWriter is an interface that allows for outputting packets to the TUN (VPN).
